@@ -3,29 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mainpage.css">
-    <title>Document</title>
+    <title>Task Manager - Your Productivity Partner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            color: white;
+            margin: 0;
+        }
+        .toggle {
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Hide sidebar off-screen */
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            transition: left 0.3s ease;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .hero {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .feature {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+        .testimonials {
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .cta {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .cta button {
+            background-color: white;
+            color: #4CAF50;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .cta button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    
-    <nav>
-        <div class="container1">
-            <div class="logo-container">
-                <img src="./1.png" alt="Website Logo" class="website-logo"> <!-- Your logo here -->
-                <h4 class="TaskTrack"></h4> 
-            </div>
-            <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="TASKS.html">TAKS</a></li>
-                <li><a href="RESOURCES.html">RESOURCES</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <!-- <li><a href="faqs.html">FAQ</a></li>
-                <li><a href="FEEDBACK.html">FEEDBACK</a></li> -->
-             
-            </ul>
-          
-        </div>
-    </nav>
+
+<header>
+    <div class="navbar">
+        <div class="toggle" onclick="toggleSidebar()">&#9776;</div>
+        <h1>Task Manager</h1>
+    </div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <a href="#features">Features</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#cta">Get Started</a>
+    <a href="javascript:void(0);" onclick="toggleSidebar()">Close</a> <!-- Close link -->
+</div>
+
+<section class="hero">
+    <h2>Stay Organized and Get Things Done</h2>
+    <p>Manage your tasks efficiently with our easy-to-use task manager. Keep track of your deadlines and boost your productivity!</p>
+</section>
+
+<section class="features" id="features">
+    <div class="feature">
+        <h3>Easy Task Management</h3>
+        <p>Add, edit, and delete tasks with just a few clicks.</p>
+    </div>
+    <div class="feature">
+        <h3>Calendar Integration</h3>
+        <p>Visualize your tasks on a calendar to never miss a deadline.</p>
+    </div>
+    <div class="feature">
+        <h3>Reminders & Notifications</h3>
+        <p>Set reminders to stay on top of your tasks and deadlines.</p>
+    </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+    <h2>What Our Users Say</h2>
+    <p>"This task manager has changed the way I work. I am more organized and productive!" - Jane Doe</p>
+    <p>"I love the calendar feature! It helps me plan my week effectively." - John Smith</p>
+</section>
+
+<section class="cta" id="cta">
+    <h2>Ready to Get Started?</h2>
+    <p>Sign up today and take control of your tasks!</p>
+    <button onclick="window.location.href='task-manager.html'">Get Started</button>
+</section>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.style.left = sidebar.style.left === '0px' ? '-250px' : '0px';
+    }
+</script>
+
 </body>
 </html>

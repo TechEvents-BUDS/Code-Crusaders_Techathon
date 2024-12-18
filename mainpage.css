@@ -1,82 +1,90 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
-    color: #333;
-background-color: white;
-    background-size: cover;
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the background from repeating */
 }
-
-/* ////////////////logo/////////////// */
-
-.logo-container {
-    display: flex; /* Use flexbox for the logo and title */
-    align-items: center; /* Center items vertically */
-    position: absolute; /* Position the logo container absolutely */
-   bottom: -4px;/* Align to the top of the navbar */
- left: -20px; /* Align to the left of the navbar */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
 }
-
-.website-logo {
-    width: 70px; /* Adjust the size as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 8px; /* Use a positive margin for spacing */
-  
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-.title {
-   
-    font-size: 24px; /* Adjust the font size as needed */
-    color: #ffffff; /* Change the color as needed */
-    font-weight: bold; /* Make the title bold for better visibility */
-    letter-spacing: 8px;
-    
+.navbar h1 {
+    color: white;
+    margin: 0;
 }
-
-/* Navbar Styling */
-nav {
-    background-color: #051320; /* Dark background for the navbar */
-    padding: 15px 20px; /* Padding for the navbar */
-    height: 6vh; /* Height of the navbar */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+.toggle {
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
 }
-
-.container1 {
-    max-width: 1900px; /* Maximum width of the container */
-    display: flex; /* Use flexbox for layout */
-    justify-content: flex-end; /* Align nav links to the right */
-    align-items: center; /* Center items vertically */
-    height: 5vh; /* Height of the container */
-    position: relative; /* Positioning context for absolute elements */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide sidebar off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
-
-.nav-links {
-    list-style: none; /* Remove bullet points from list */
-    display: flex; /* Display links in a row */
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
 }
-
-.nav-links li {
-    margin: 5px 20px; /* Space between links */
-
+.sidebar a:hover {
+    background-color: #575757;
 }
-
-.nav-links a {
-    color: #ffffff; /* Link color */
-    text-decoration: none; /* Remove underline from links */
-    font-size: 18px; /* Font size for links */
-    transition: color 0.3s; /* Smooth transition for hover effect */
+.hero {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
 }
-
-.nav-links a:hover {
-    text-decoration: underline; /* Underline links on hover */
-    color: #ffcc00; /* Change color on hover for better visibility */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+.feature {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+.testimonials {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+.cta {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.cta button {
+    background-color: white;
+    color: #4CAF50;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.cta button:hover {
+    background-color: #45a049;
 }
