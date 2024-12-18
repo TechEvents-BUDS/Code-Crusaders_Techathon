@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management App</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div id="arrow-back" class="navbar-arrow-back">&larr;</div>
+                <div class="navbar-title">
+                    <h2>Task Management App</h2>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+       <section class="section-view">
+    <h2 class="centered-title">Your Task List</h2>
+    <input type="text" id="task-filter" placeholder="Filter tasks..." class="input-text" />
+    <div class="centered-container no-task-message" id="no-task-message">
+        You don't have any tasks for the moment.
+    </div>
+    <ul id="task-list" class="centered-container"></ul>
+    <button id="button-add" class="button-add animation-expand">+</button>
+</section>
+
+<section class="section-add-edit">
+    <h2 class="centered-title form-create-mode">Add a New Task</h2>
+    <h2 class="centered-title form-edit-mode">Edit The Task</h2>
+
+    <div class="centered-container">
+        <form id="form">
+            <input id="task-id" type="hidden" />
+
+            <div class="form-group">
+                <label for="task-name" class="form-label">Task Name</label>
+                <input id="task-name" type="text" class="input-text" required />
+                <div id="input-error-name" class="input-error">Write a name.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="task-deadline" class="form-label">Deadline</label>
+                <div class="select-date-group">
+                    <label for="task-day" class="form-label">Day</label>
+                    <select id="task-day" class="input-text select-date"></select>
+
+                    <label for="task-month" class="form-label">Month</label>
+                    <select id="task-month" class="input-text select-date select-month"></select>
+
+                    <label for="task-year" class="form-label">Year</label>
+                    <select id="task-year" class="input-text select-date"></select>
+                </div>
+                <div id="input-error-deadline" class="input-error">Select a valid date.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="task-description" class="form-label">Description</label>
+                <textarea id="task-description" class="input-text input-textarea" required></textarea>
+                <div id="input-error-description" class="input-error">Write a description.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="task-priority" class="form-label">Priority</label>
+                <select id="task-priority" class="input-text" required>
+                    <option value="">Select</option>
+                    <option value="Low">Low</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="High">High</option>
+                </select>
+                <div id="input-error-priority" class="input-error">Select a priority.</div>
+            </div>
+
+            <div class="button-group crud-buttons">
+                <button id="button-create" class="button button-create form-create-mode">Create</button>
+                <button id="button-save" class="button button-save form-edit-mode">Save Changes</button>
+                <button id="button-delete" class="button button-delete form-edit-mode">Delete</button>
+            </div>
+
+            <div class="button-group confirmation-delete">
+                <div class="confirmation-delete-message">Delete the current task?</div>
+                <button id="button-confirm-yes" class="button button-delete">Yes</button>
+                <button id="button-confirm-no" class="button button-create">No</button>
+            </div>
+        </form>
+    </div>
+</section>
+    </main>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
